@@ -23,4 +23,5 @@ int main(int argc, char *argv[])
     }
     i--;
   if (i!=0) goto back;
+  printf("Fin\n");
 }
