@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
 {
   unsigned int n;
   scanf("%d",&n);
-  n++;
   unsigned i = n;
   if (i==0) return 0;
+  n++;
   back:
     pid_t p = fork();
     pid_t cpid;
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
       exit(CUSTOMEXIT);
     }else{
       cpid = wait(NULL);
-      printf("%d", i);
+      printf("Proceso hijo %d\n", n -i);
 
     }
     i--;
