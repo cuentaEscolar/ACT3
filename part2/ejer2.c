@@ -10,8 +10,9 @@ int main(int argc, char *argv[])
   int i = n;
   if (i<=0) return 1;
   a:
-  pid_t p = fork();
   printf("%d\n",i);
+  usleep(100000);
+  pid_t p = fork();
   i--;
   if (i!=0) goto a;
 }
