@@ -7,12 +7,15 @@ int main(int argc, char *argv[])
 {
   unsigned int n;
   scanf("%d",&n);
-  int i = n;
+  n++;
+  int i = n ;
+  int toPrint = 0;
   if (i<=0) return 1;
-  a:
-  printf("%d\n",i);
-  usleep(100000);
-  pid_t p = fork();
-  i--;
-  if (i!=0) goto a;
+  back:
+    printf("%d\n",toPrint);
+    usleep(100000);
+    pid_t p = fork();
+    toPrint++;
+    i--;
+  if (i!=0) goto back;
 }
