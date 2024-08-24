@@ -13,11 +13,11 @@
 = Programa de deteccion basica de hijo/padre
 
 = Programa de bfs en forks
-
-= Proceso que crea n procesos
-Se aprendio el orden de ejecucion de los hilos
 La creacion de hilos recursivamente forza dfs, por lo que se necesito usar sleep
 para asegurarse de que los hijos imprimirian primero que todos los nietos(incluyendo hijos
 de otros hijos creados antes del actual). No es una solucion elegente.
-En el otra caso simplemente forzamos a los hijos a morir antes de crear uno nuevo.
+E
+= Proceso que crea n procesos
+Se aprendio el orden de ejecucion de los hilos. 
+Ejecutar n forks de seguido no funcionaria, por lo que simplemente forzamos a los hijos a morir antes de crear uno nuevo.
 
