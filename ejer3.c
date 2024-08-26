@@ -14,13 +14,12 @@ int main(int argc, char *argv[])
   back:
     pid_t p = fork();
     pid_t cpid;
-    if (p==0){
-      exit(CUSTOMEXIT);
-    }else{
-      cpid = wait(NULL);
-      printf("Proceso hijo %d\n", n -i);
 
-    }
+    if (p==0) exit(CUSTOMEXIT);
+    cpid = wait(NULL);
+
+    printf("Proceso hijo %d\n", n -i);
+    
     i--;
   if (i!=0) goto back;
   printf("Fin\n");
