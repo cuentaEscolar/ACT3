@@ -21,13 +21,20 @@ int main(int argc, char *argv[])
   back:
     input = readline("");
     command = get_input(input);
+    if (strcmp(command[0], "exit")==0 || strcmp(input, "exit")==0){
+      free(input);
+      free(command);
+    return 1;
+    }
+
     child_pid = fork();
     if (child_pid < 0){
       KILL("fork fail");
     }
     else if (child_pid == 0) {
-      system(command[0]); 
-    }
+      system(input); 
+      exit(1);
+  }
     free(input);
     free(command);
     
@@ -35,7 +42,7 @@ int main(int argc, char *argv[])
   printf("Fin\n");
 }
 char **get_input(char *input) {
-    
+  
     char *separator = " ";
     char *parsed;
     int count;
