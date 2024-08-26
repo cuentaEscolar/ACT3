@@ -21,3 +21,11 @@ E
 Se aprendio el orden de ejecucion de los hilos. 
 Ejecutar n forks de seguido no funcionaria, por lo que simplemente forzamos a los hijos a morir antes de crear uno nuevo.
 
+= Proceso que llama a system
+
+Por alguna razon me parecio apropiado crear un fork para este
+
+= Proceso hijo que llama a system
+  
+Por accidente ya habia resuelto ese problema
+
