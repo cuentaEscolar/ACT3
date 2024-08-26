@@ -3,7 +3,7 @@
 
 int main()
 {
-	sleep(10);
+	sleep(2);
 	printf("Hola mundo\n"),
 	sleep(2);
 }
