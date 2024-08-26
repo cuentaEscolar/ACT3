@@ -10,21 +10,17 @@
 /*
  * */
 #define KILL(msg) perror(msg);exit(1)
-char **get_input(char*);
 int main(int argc, char *argv[])
 {
-  char **command; 
   char *input;
   pid_t child_pid;
   int stat_loc;
 
-  back:
+  mainLoop:
     input = readline("");
-    command = get_input(input);
-    if (strcmp(command[0], "exit")==0 || strcmp(input, "exit")==0){
+    if (strcmp(input, "exit")==0){
       free(input);
-      free(command);
-    return 1;
+      return 1;
     }
 
     child_pid = fork();
@@ -36,28 +32,8 @@ int main(int argc, char *argv[])
       exit(1);
   }
     free(input);
-    free(command);
     
-  goto back;
+  goto mainLoop;
   printf("Fin\n");
 }
-char **get_input(char *input) {
-  
-    char *separator = " ";
-    char *parsed;
-    int count;
-    int index = 0;
-    int prev = 0;
-    
-    char **command = malloc( 8 * sizeof(char *));
-    if (command==NULL){KILL("malloc failure");}
-    parsed = strtok(input, separator);
-    index = 0;
-    while (parsed != NULL) {
-        command[index] = parsed;
-        index++;
-        parsed = strtok(NULL, separator);
-    }
-    command[index] = NULL;
-    return command;
-}
+
