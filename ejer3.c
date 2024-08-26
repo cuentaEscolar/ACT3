@@ -4,6 +4,7 @@
 #include <sys/types.h> 
 #include <unistd.h>
 #define CUSTOMEXIT 5
+/* Realizado por Regalado */
 int main(int argc, char *argv[])
 {
   unsigned int n;

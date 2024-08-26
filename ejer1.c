@@ -1,6 +1,9 @@
 #include <stdio.h> 
 #include <sys/types.h> 
 #include <unistd.h>
+/*
+ * Realizado por Regalado
+  */
 int main(int argc, char *argv[])
 {
   pid_t p = fork();

@@ -3,6 +3,9 @@
 #include <sys/wait.h>
 #include <sys/types.h> 
 #include <unistd.h>
+/*
+  * Realizado por Regalado
+* */
 int main(int argc, char *argv[])
 {
   unsigned int n;
